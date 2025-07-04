@@ -3,14 +3,23 @@
 This project simulates a quantitative stock scoring system, ranking Nifty50 stocks based on valuation and momentum factors.
 ##  Highlights
 
-- Uses realistic snapshot of Nifty50 stock data
-- Calculates a multi-factor score: `(daily change %) / P/E ratio`
-- Ranks stocks and visualizes top 10
-- Easily deployable as a Kaggle notebook or Streamlit app
+-Uses a realistic snapshot of Nifty50 stock data (CSV)
+-Computes a custom multi-factor score:
+Score = (Daily % Price Change) / (P/E Ratio)
+-Identifies undervalued, high-momentum stocks
+-Visualizes the Top 10 stocks by score
+-Includes credit rating logic (AAA to BB)
+-Easily runnable on Kaggle, Colab, or Jupyter
+-Ready to be deployed as a Streamlit App
+
 
 ## Scoring Logic
--score = (daily % price change) / (P/E ratio)
-This allows high-momentum, undervalued stocks to rank higher.
+Multi-Factor Score = (Daily % Price Change) / (P/E Ratio)
+
+This logic rewards:
+Momentum: Positive daily price movement
+Valuation: Lower P/E ratios (undervalued stocks)
+Higher scores indicate better combined momentum and valuation.
 
 ##  Project Structure
 
@@ -23,18 +32,22 @@ multi-factor-stock-ranking-engine/
 
 ##  Sample Visuals
 
-- Scatter Plot: P/E vs Daily % Change (sized by Market Cap)
-- Bar Chart: Top 10 stocks by multi-factor score
+-Bar Chart: Top 10 stocks by multi-factor score
+-Pie Chart: Credit rating distribution
+-Scatter Plot: P/E Ratio vs Daily % Change (sized by Market Cap)
 
 ## Tech Stack
 
-- Python (pandas, seaborn, matplotlib)
-- Jupyter / Kaggle notebook
-- CSV dataset (no live API needed)
+-Python: pandas, matplotlib, seaborn
+-Notebook: Jupyter, Kaggle, Google Colab
+-Data: Static CSV (no API required)
 
-##  Notes
 
-This project does not use live data due to NSE and Alpha Vantage limitations. The dataset simulates a recent snapshot for demonstrative purposes.
+##  Disclaimer
+
+-This project uses a simulated snapshot of Nifty50 data.
+-No live market API (e.g., NSE, Alpha Vantage) is used.
+-Results are for educational/demonstration purposes only and not financial advice.
 
 
 
